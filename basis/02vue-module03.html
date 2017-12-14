@@ -3,18 +3,15 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-
 	<script src="vue.js"></script>
-
 </head>
 <body>
 	<div id="box">
 		<input type="button" value="btn1" @click="a='aaa'">
 		<input type="button" value="btn2" @click="a='bbb'">
 		<component :is="a"></component>  
-		<!--  动态组件  注意  :is ='组件名称'-->
+		<!--  动态组件 :is ='组件名称'-->
 	</div>
-
 
 	<script type="text/javascript">
 		var vm = new Vue({
@@ -24,10 +21,10 @@
 			},
 			components:{
 				"aaa":{
-					template:"<h2>aaaaaaaaaaaaaaa</h2>"
+					template:"<h2>welcome</h2>"
 				},
 				"bbb":{
-					template:"<h2>bbbbbbbbbbbbbbb</h2>"
+					template:"<h2>thanks</h2>"
 				}
 			}
 		})

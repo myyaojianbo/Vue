@@ -12,7 +12,6 @@
 #### 03vue-module:父子组件
 #### 03vue-module01:子组件访问父组件数据
 #### 03vue-module02:父组件访问子组件数据
-#### 03vue-module02:父组件访问子组件数据
 #### 04slot01:slot的用法1
 #### 04slot02:slot的用法2
 
