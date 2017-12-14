@@ -1,7 +1,6 @@
 # Vue
 ### basis
-####01vue-drag | 自定义命令实现拖拽功能
-#### module-practice | 组件练习
+#####01vue-drag | 自定义命令实现拖拽功能
 #####01vue-module01 | 全局组件
 #####01vue-module02 | 局部组件
 #####01vue-module03 | 全局组件2
