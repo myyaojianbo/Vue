@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<script src="vue.js"></script>
+
+</head>
+<body>
+	<div id="box">
+		<aaa></aaa>
+	</div>
+	<script type="text/javascript">
+
+		var Aaa = Vue.extend({
+			template:'<h3>{{msg}}</h3>',
+			data(){
+				return {
+					msg:"dddd"
+				}
+			}
+		})
+
+		// Vue.component('aaa',Aaa);
+
+		var vm = new Vue({
+			el:'#box',
+			data:{
+				
+			},
+			methods:{
+				toggle(){
+					this.aaa = !this.aaa;
+				}
+			},
+			components:{  //局部组件
+				"aaa":Aaa
+			}
+		})
+	</script>
+</body>
+</html>

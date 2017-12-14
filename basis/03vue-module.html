@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<script src="vue.js"></script>
+
+</head>
+<body>
+	<div id="box">
+		<aaa></aaa>
+	</div>
+
+	<template id="aaa">
+		<h2>aaaaaaaaa----{{msg}}</h2>
+		<bbb :mm="msg" :m-msg="msg2"></bbb>
+	</template>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#box',
+			data:{
+			},
+			components:{
+				"aaa":{
+					data(){
+						return {
+							msg:'萝卜白菜',
+							msg2:123
+						}
+					},
+					template:"#aaa",
+					components:{
+						"bbb":{
+							props:['mm','mMsg'],
+							//这里需要驼峰命名法
+							//props:{ //第二种方式 
+							// 	'mm':String,
+							// 	'mMsg':Number
+							// }
+							template:"<h2>bbbbbbb--{{mm}}|{{mMsg}}</h2>"
+						}
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

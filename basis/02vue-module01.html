@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<script src="vue.js"></script>
+
+</head>
+<body>
+	<div id="box">
+		<my-aaa></my-aaa>
+	</div>
+	
+	<script type="x-template" id="aaa">
+		<h3 @click='changed'>{{msg}}</h3>
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+		</ul>
+	</script>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#box',
+			data:{},
+			methods:{
+				toggle(){
+					this.aaa = !this.aaa;
+				}
+			},
+			components:{  //另一种局部编写
+				"my-aaa":{
+					data(){
+						return {
+							msg:"bnbnbn"
+						}
+					},
+					methods:{
+						changed(){
+							this.msg = "welcome"
+						}
+					},
+					template:"#aaa"
+				}
+			}
+		})
+	</script>
+</body>
+</html>

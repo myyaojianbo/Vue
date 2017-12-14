@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<script src="vue.js"></script>
+
+</head>
+<body>
+	<div id="box">
+		<aaa></aaa>
+	</div>
+	<script type="text/javascript">
+
+		Vue.component('aaa',{
+			data(){
+				return {
+					msg:"hahhahaha"
+				}	
+			},
+			template:'<h3>{{msg}}</h3>'
+		});
+
+		var vm = new Vue({
+			el:'#box',
+			data:{
+				
+			},
+			methods:{
+				toggle(){
+					this.aaa = !this.aaa;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

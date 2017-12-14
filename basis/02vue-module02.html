@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<script src="vue.js"></script>
+
+</head>
+<body>
+	<div id="box">
+		<my-aaa></my-aaa>
+	</div>
+	<template id="aaa">
+		<h3 @click='changed'>{{msg}}</h3>
+		<ul>
+			<li v-for="item in arr">{{item}}</li>
+		</ul>
+	</template>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#box',
+			data:{
+			},
+			methods:{
+				toggle(){
+					this.aaa = !this.aaa;
+				}
+			},
+			components:{  //另一种局部编写
+				"my-aaa":{
+					data(){
+						return {
+							msg:"bnbnbn",
+							arr:["a","b","c","s"]
+						}
+					},
+					methods:{
+						changed(){
+							this.msg = "welcome"
+						}
+					},
+					template:"#aaa"
+				}
+			}
+		})
+	</script>
+</body>
+</html>

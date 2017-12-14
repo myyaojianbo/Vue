@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<script src="vue.js"></script>
+
+</head>
+<body>
+	<div id="box">
+		<aaa></aaa>
+	</div>
+
+	<template id="aaa">
+		<span>父组件-{{msg}}</span>
+		<br>
+		<input type="button" value="anniu1" name="">
+		<bbb @msg-c="get"></bbb>
+		<!-- @msg-c接受事件 -->
+	</template>
+
+	<template id="bbb">
+		<h2>子组件bbb-</h2>
+		<input type="button" value="send" @click="send">
+	</template>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:'#box',
+			data:{
+			},
+			components:{
+				"aaa":{
+					data(){
+						return {
+							msg:'父组件数据---萝卜白菜',
+							msg2:123
+						}
+					},
+					methods:{
+						get(msg){
+							this.msg=msg;
+						}
+					},
+					template:"#aaa",
+					components:{
+						"bbb":{
+							data(){
+								return {
+									a:'子组件数据---httt'
+								}
+							},
+							methods:{
+								send(){
+									//发送事件，msg-c表示事件名，a表示数据名 
+									this.$emit('msg-c',this.a)
+								}
+							},
+							template:"#bbb"
+						}
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>
